@@ -1,123 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="h-100">
-
-<head>
-    <title>App Name: A Coding Project by Austin Johnson</title>
+  <head>
+    <title>Zero to Hundred: A Coding Project by Austin Johnson</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-    <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="stylesheet" href="/css/site.css">
-    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+  </head>
 
-</head>
-
-<body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-100">
     <!-- === Nav Section === -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <div class="container-fluid">
-            <img src="img/Footer Logo (3).svg" height="25" alt="Logo">
-            <a class="navbar-brand" href="#">App Name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="app.html">The App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="code.html">Code</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">About</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <img src="img/Footer Logo (3).svg" height="25" alt="Logo" />
+        <a class="navbar-brand" href="#">Zero to Hundred</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="app.html">The App</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="code.html"
+                >Code</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="#">Git Repo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="#">About</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- === Main Section === -->
     <main class="flex-shrink-0 mt-3">
-        <div class="container px-4 py-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME.</h2>
-            <div class="row row-cols-1 row-cols-lg-2">
-                <div class="col-lg-8">
-                    <pre class="line-numbers">
-                        <code class="language-javascript">
-                            // Hello world
-                            function helloWorld(){
-                                alert('Hello World');
+      <div class="container px-4 py-5">
+        <h2 class="border-1 border-bottom border-dark">
+          The Code for Zero to Hundred.
+        </h2>
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col-lg-8">
+            <pre class="line-numbers">
+                <code class="language-javascript">  
+                        // get the values from the UI
+                        function getValues(){
+                            // get the values from the page 
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+                            let numbers = [];
+
+                            // parse into integers
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+
+                            if(Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                // call generateNumbers 
+                                numbers = generateNumbers(startValue, endValue);
+
+                                // call displayNumbers
+                                displayNumbers(numbers);
+                            } else {
+                                alert("You must enter only numbers.");
                             }
-                        </code>
-                    </pre>
-                </div>
-                <div class="col-lg-4">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello world</h5>
-                    <p>Hello World is a function that displays an alert  witha message of "Hello World".</p>
-                </div>
-            </div>
+                        }
+
+                        // generate numbers from the start value, to the end value
+                        function generateNumbers(startValue, endValue) {
+                            let numbers = [];
+
+                            // we want to get all numbers from start to end
+
+                            for(let i = startValue; i <= endValue; i++) {
+
+                                // this will execute in a loop, until index = endValue
+                                numbers.push(i);
+                            }
+
+                            return numbers;
+                        }
+
+                        // display the numbers and mark the even numbers bold
+                        function displayNumbers(numbers) {
+
+                            let templateRows = "";
+
+                            for (let i = 0; i < numbers.length; i++) {
+                                
+                                let number = numbers[i];
+                                if (number % 2 == 0) {
+                                    className="even"
+                                } else {
+                                    className="odd"
+                                }
+                                // This does render correctly with Prism. See the source.
+                                templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+                            }
+
+                            document.getElementById("results").innerHTML = templateRows;
+                        }
+                </code>
+            </pre>
+          </div>
+          <div class="col-lg-4">
+            <p>The code is structured into the three following functions.</p>
+            <hr>
+            <h5>Get Values</h5>
+            <p>
+                <strong>Get Values</strong> is the function that initializes the Zero to Hundred application. It does this by 
+                grabbing the values entered into the form. Once that is done, it parses the data received from the form, 
+                to ensure it is an integer. If not, an error is triggered, and the user is asked to enter the proper type of values.
+            </p>
+            <p>
+              If the numbers are valid, <strong>Generate Numbers</strong> is called. Once this is successfully completed,
+              <strong>Display Numbers</strong> is also called, and the numbers array generated by <strong>Generate Numbers</strong>
+              is passed into it.
+            </p>
+            <hr>
+            <h5>Generate Numbers</h5>
+            <p>
+                This function takes the start and end values selected by the user, and generates an array of numbers.
+                That array is returned to <strong>Get Values</strong>, which is then received by <strong>Display Numbers</strong>.
+            </p>
+            <hr>
+            <h5>Display Numbers</h5>
+            <p>
+                This function creates a table around the generated numbers array. Once the array of numbers has been passed through to 
+                <strong>Display Numbers</strong>, the for loop within iterates over each entry in the array, and creates a 
+                column and row for each number in the table. 
+            </p>
+            <p>
+                As each cell in the table is being created, the value is being checked whether it is even or odd. If the number is 
+                even, the font weight of that item is changed to bold. Once this check is completed, the table and it's rows are 
+                added to the templateRows variable. <strong>The Document's</strong> method <strong>Get Element by Id</strong>
+                is attached to the <strong>templateRows</strong> variable, and then displayed on the DOM.
+            </p>
+            <p>
+                Once this check is completed, the table and it's rows are 
+                added to the templateRows variable, which is passed to <strong>The Document's</strong> method 
+                <strong>Get Element by Id</strong>, which then displays the newly created table on the DOM.
+            </p>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- === Footer Section === -->
     <footer class="footer mt-auto py-3 sticky-footer">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-lg-3 gy-2">
-                <div class="col order-last d-flex align-items-center order-lg-first text-light">
-                    <div><span class="text-muted">&copy;2021</span> Austin Johnson | austin.b.johnson98@gmail.com</div>
-                </div>
-                <div class="col d-flex align-items-center justify-content-lg-center">
-                    <img src="img/Footer Logo.svg" height="80" alt="Austin Johnson's Logo">
-                </div>
-                <div class="col text-light d-flex align-items-center justify-content-lg-end justify-content-start">
-                    <div class="row">
-                        <div class="col social">
-                            <a href="" target="_blank">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="col social"><a href="" target="_blank">
-                            <i class="fab fa-github fa-2x"></i></a>
-                        </div>
-                        <div class="col social"><a href="" target="_blank">
-                            <i class="fab fa-twitter fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 gy-2">
+          <div
+            class="
+              col
+              order-last
+              d-flex
+              align-items-center
+              order-lg-first
+              text-light
+            "
+          >
+            <div>
+              <span class="text-muted">&copy;2021</span> Austin Johnson |
+              austin.b.johnson98@gmail.com
             </div>
+          </div>
+          <div class="col d-flex align-items-center justify-content-lg-center">
+            <img
+              src="img/Footer Logo.svg"
+              height="80"
+              alt="Austin Johnson's Logo"
+            />
+          </div>
+          <div
+            class="
+              col
+              text-light
+              d-flex
+              align-items-center
+              justify-content-lg-end justify-content-start
+            "
+          >
+            <div class="row">
+              <div class="col social">
+                <a href="" target="_blank">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+              </div>
+              <div class="col social">
+                <a href="" target="_blank">
+                  <i class="fab fa-github fa-2x"></i
+                ></a>
+              </div>
+              <div class="col social">
+                <a href="" target="_blank">
+                  <i class="fab fa-twitter fa-2x"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/prism.js"></script>
     <script>
-        Prism.plugins.NormalizeWhitespace.setDefaults({
-            'remove-trailing': true,
-            'remove-indent': true,
-            'left-trim': true,
-            'right-trim': true
-        })
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+        "remove-trailing": true,
+        "remove-indent": true,
+        "left-trim": true,
+        "right-trim": true,
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

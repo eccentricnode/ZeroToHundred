@@ -18,7 +18,7 @@ function getValues(){
         // call displayNumbers
         displayNumbers(numbers);
     } else {
-        alert("You must enter integers.")
+        alert("You must enter only numbers.");
     }
 }
 

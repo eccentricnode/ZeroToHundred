@@ -22,6 +22,10 @@ nav {
 
 }
 
+h5 {
+ margin-top: 20px;
+}
+
 footer {
     background-color: var(--primary-color);
 }
