@@ -47,7 +47,7 @@ function displayNumbers(numbers) {
 
     for (let i = 0; i < numbers.length; i++) {
         
-        let number = numbers[];
+        let number = numbers[i];
         if (number % 2 == 0) {
             className="even"
         } else {
